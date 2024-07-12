@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
    try {
       const user = await User.findOne({ email: req.body.email });
       if (!user) {
-         return res.status(401).json("You have not registered");
+         return res.status(401).json("You are not registered");
       }
 
       const hashedPassword = CryptoJs.AES.decrypt(
